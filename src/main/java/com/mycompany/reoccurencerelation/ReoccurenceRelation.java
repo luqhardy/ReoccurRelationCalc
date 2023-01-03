@@ -6,7 +6,9 @@ package com.mycompany.reoccurencerelation;
 
 /**
  *
- * @author luqma
+ * MOHAMED LUQMAN HADI BIN MOHAMED SUHAIRI
+ * 2210855
+ * MATHS FOR COMPUTING: CODE FOR CALCULATING REOCCURENCE RELATION AND OUTPUT AS CSV
  */
 import java.util.Scanner;
 import java.io.*;
@@ -16,7 +18,9 @@ public class ReoccurenceRelation {
     int array[] = new int[10];
     String arrayStr[] = new String[10];
     Scanner input = new Scanner(System.in);
+    System.out.print("Enter the value for C: ");
     int c = input.nextInt();
+    System.out.print("Enter the value for a(0): ");
     int a_zero = input.nextInt();
     array[0] = recurRelation(c, a_zero);
     for(int i = 1; i<10; i++){
@@ -31,6 +35,7 @@ public class ReoccurenceRelation {
     for(int j = 0; j<10; j++){
     csv = String.join(",", arrayStr);
     }
+    
     try {
     printToCSV(csv);
     }
