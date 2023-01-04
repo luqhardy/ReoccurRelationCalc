@@ -26,7 +26,7 @@ public class ReoccurenceRelation {
     for(int k = 0; k<10; k++){
         arrayStr[k] = Integer.toString(array[k]);
     }
-    System.out.println("Now recurRalationModified will be called");
+    System.out.println("Now recurRalationModified will be called. /n This is the formula for recurRelation but modified. /n an = (c*a)-(c*(a*a)) ");
     System.out.print("Enter the value for C: ");
     c = input.nextInt();
     System.out.print("Enter the value for a(0): ");
