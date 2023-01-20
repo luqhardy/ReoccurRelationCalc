@@ -2,7 +2,8 @@ package com.mycompany.reoccurencerelation;
 /**
  *
  * MOHAMED LUQMAN HADI BIN MOHAMED SUHAIRI
- * 2210855
+ * MUAZZAM HAZMI BIN SUKHAIMI
+ * 
  * MATHS FOR COMPUTING: CODE FOR CALCULATING REOCCURENCE RELATION AND OUTPUT AS CSV
  */
 import java.util.Scanner;
@@ -58,8 +59,8 @@ public class ReoccurenceRelation {
     }
     
     }
-    public static int recurRelation(int c, int a){
-        int an = (c*a);
+    public static int recurRelation(int c, int an_minusone){
+        int an = (c*an_minusone);
         System.out.println(an);
         return an;
     }
