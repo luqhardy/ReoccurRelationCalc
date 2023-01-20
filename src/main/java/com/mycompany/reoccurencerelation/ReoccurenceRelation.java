@@ -3,7 +3,8 @@ package com.mycompany.reoccurencerelation;
  *
  * MOHAMED LUQMAN HADI BIN MOHAMED SUHAIRI
  * MUAZZAM HAZMI BIN SUKHAIMI
- * 
+ * SYAHIR
+ * MIRZA DARWISY
  * MATHS FOR COMPUTING: CODE FOR CALCULATING REOCCURENCE RELATION AND OUTPUT AS CSV
  */
 import java.util.Scanner;
@@ -27,7 +28,7 @@ public class ReoccurenceRelation {
     for(int k = 0; k<10; k++){
         arrayStr[k] = Integer.toString(array[k]);
     }
-    System.out.println("Now recurRalationModified will be called. /n This is the formula for recurRelation but modified. /n an = (c*a)-(c*(a*a)) ");
+    System.out.println("Now recurRalationModified will be called. \n This is the formula for recurRelation but modified. \n an = (c*a)-(c*(a*a)) ");
     System.out.print("Enter the value for C: ");
     c = input.nextInt();
     System.out.print("Enter the value for a(0): ");
@@ -41,22 +42,21 @@ public class ReoccurenceRelation {
     }
     
     //write to csv
-    String csv = "";
+    String[] csv = new String[10];
+    String[] csv2 = new String[10];
     for(int j = 0; j<10; j++){
-    csv = String.join(",", arrayStr);
+        csv[j] = Integer.toString(j) + "," + arrayStr[j];
+        csv2[j] = Integer.toString(j) + "," + arrayStr2[j];    
     }
-    String csv2 = "";
-    for(int j = 0; j<10; j++){
-    csv2 = String.join(",", arrayStr2);
-    }
-    
     try {
-    printToCSV(csv);
-    printToCSV(csv2);
-    }
-    catch(IOException e) {
-    e.printStackTrace();
-    }
+            printToCSV(csv, "recur1");
+            printToCSV(csv2, "recur2");
+
+        }
+            catch(IOException e) {
+            e.printStackTrace();
+        }    
+
     
     }
     public static int recurRelation(int c, int an_minusone){
@@ -70,15 +70,18 @@ public class ReoccurenceRelation {
         return an;
     }
     
-    static void printToCSV(String csv) throws IOException{ //print order using File I/O
+    static void printToCSV(String csv[], String fileName) throws IOException{ //print order using File I/O
         Scanner input = new Scanner(System.in);
         try{
-        System.out.print("Enter name of file you prefer: "); 
-        String nameOfFile = input.nextLine() +".csv";
+        String nameOfFile = fileName +".csv";
         BufferedWriter file = new BufferedWriter(new FileWriter(nameOfFile));
-        file.write(csv);
-        file.close();
-        System.out.println(nameOfFile+" successfully printed!");
+            for(int i=0;i<csv.length;i++){
+                file.write(csv[i]);
+                file.write("\n");
+                
+            }
+            file.close();
+        System.out.println(fileName + " Exported as .csv");    
         }
         catch(IOException e) {
         e.printStackTrace();
