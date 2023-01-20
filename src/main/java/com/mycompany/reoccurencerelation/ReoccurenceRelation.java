@@ -70,15 +70,13 @@ public class ReoccurenceRelation {
         return an;
     }
     
-    static void printToCSV(String csv[], String fileName) throws IOException{ //print order using File I/O
-        Scanner input = new Scanner(System.in);
+    static void printToCSV(String csv[], String fileName) throws IOException{
         try{
         String nameOfFile = fileName +".csv";
         BufferedWriter file = new BufferedWriter(new FileWriter(nameOfFile));
             for(int i=0;i<csv.length;i++){
                 file.write(csv[i]);
-                file.write("\n");
-                
+                file.write("\n");  
             }
             file.close();
         System.out.println(fileName + " Exported as .csv");    
